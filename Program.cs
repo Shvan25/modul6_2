@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstApp;
+using System;
 
 namespace FirstApp
 {
@@ -13,7 +14,27 @@ namespace FirstApp
         {
             Console.WriteLine("Меня зовут {0}, мне {1}", name, age);
         }
+
+        // Конструктор 1
+        public Human()
+        {
+            name = "Неизвестно";
+            age = 20;
+        }
+        // Конструктор 2
+        public Human(string n)
+        {
+            name = n;
+            age = 20;
+        }
+        // Конструктор 3
+        public Human(string n, int a)
+        {
+            name = n;
+            age = a;
+        }
     }
+}
 
     struct Animal
     {
@@ -33,15 +54,16 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            Human human = new Human();
-            human.Greetings();
+        Human human = new Human();
+        human.Greetings();
 
-            human.name = "Дмитрий";
-            human.age = 23;
-            human.Greetings();
+        human = new Human("Дмитрий");
+        human.Greetings();
+
+        human = new Human("Дмитрий", 23);
+        human.Greetings();
 
 
-            Console.ReadKey();
-        }
+        Console.ReadKey();
     }
-}
+    }
